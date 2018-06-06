@@ -187,7 +187,6 @@ export default class HomeScreen extends Component {
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
                                     </Text>
                                 </View>
-
                             </View>
                         </ScrollView>
                     <View>
