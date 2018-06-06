@@ -5,6 +5,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import Header from "./src/components/header";
 import PostsList from "./src/components/PostsList";
 import DetailsPosts from "./src/components/DetailsPost";
+import Loading from "./src/screens/loading";
 
 
 
@@ -19,9 +20,10 @@ const NavParameters = createStackNavigator(
         // Test: Test,
         Posts: PostsList,
         Details: DetailsPosts,
+        loading: Loading,
     },
     {
-        initialRouteName: 'Home',
+        initialRouteName: 'loading',
         navigationOptions: {
             headerTitle: <Header/>,
             headerStyle: {
