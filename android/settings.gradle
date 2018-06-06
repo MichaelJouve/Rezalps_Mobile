@@ -1,0 +1,3 @@
+rootProject.name = 'Rezalps_Mobile'
+
+include ':app'
