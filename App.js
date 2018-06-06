@@ -20,10 +20,11 @@ const NavParameters = createStackNavigator(
         // Test: Test,
         Posts: PostsList,
         Details: DetailsPosts,
+
         loading: Loading,
     },
     {
-        initialRouteName: 'loading',
+        initialRouteName: 'Home',
         navigationOptions: {
             headerTitle: <Header/>,
             headerStyle: {
