@@ -7,203 +7,222 @@ import {
     Image,
     Text,
 } from "react-native";
+import { Icon } from 'react-native-elements'
 
 
 export default class PostsList extends Component {
     render() {
         return (
-            <ScrollView style={{flexDirection: 'column'}}>
+            <View style={{flex: 1}}>
 
-                <TouchableOpacity style={styles.container}
-                                  onPress={() => {
-                                      this.props.navigation.navigate('Details');
-                                  }}>
+                <ScrollView style={{flexDirection: 'column'}}>
 
-                    <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
-                        <Image
-                            // Avatar de l'utilisateur lié au post'
-                            source={require('../../assets/img/default.png')}
-                            style={{ width: 30, height: 30, padding: 5}}
-                        />
+                    <TouchableOpacity style={styles.container}
+                                      onPress={() => {
+                                          this.props.navigation.navigate('Details');
+                                      }}>
 
-                        <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                            {/*Nom de l'utilisateur*/}
-                            Nom Prénom
-                        </Text>
+                        <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
+                            <Image
+                                // Avatar de l'utilisateur lié au post'
+                                source={require('../../assets/img/default.png')}
+                                style={{ width: 30, height: 30, padding: 5}}
+                            />
+
+                            <Text style={{flex: 3, fontSize: 12, padding: 5}}>
+                                {/*Nom de l'utilisateur*/}
+                                Nom Prénom
+                            </Text>
+                        </TouchableOpacity>
+
+                        <View>
+                            <Text style={styles.post_box}>
+                                {/*Contenu du post*/}
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
+                            </Text>
+                        </View>
+
                     </TouchableOpacity>
 
-                    <View>
-                        <Text style={styles.post_box}>
-                            {/*Contenu du post*/}
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                        </Text>
-                    </View>
+                    <TouchableOpacity style={styles.container}
+                                      onPress={() => {
+                                          this.props.navigation.navigate('Details');
+                                      }}>
 
-                </TouchableOpacity>
+                        <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
+                            <Image
+                                // Avatar de l'utilisateur lié au post'
+                                source={require('../../assets/img/default.png')}
+                                style={{ width: 30, height: 30, padding: 5}}
+                            />
 
-                <TouchableOpacity style={styles.container}
-                                  onPress={() => {
-                                      this.props.navigation.navigate('Details');
-                                  }}>
+                            <Text style={{flex: 3, fontSize: 12, padding: 5}}>
+                                {/*Nom de l'utilisateur*/}
+                                Nom Prénom
+                            </Text>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
-                        <Image
-                            // Avatar de l'utilisateur lié au post'
-                            source={require('../../assets/img/default.png')}
-                            style={{ width: 30, height: 30, padding: 5}}
-                        />
+                        <View>
+                            <Text style={styles.post_box}>
+                                {/*Contenu du post*/}
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
+                            </Text>
+                        </View>
 
-                        <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                            {/*Nom de l'utilisateur*/}
-                            Nom Prénom
-                        </Text>
                     </TouchableOpacity>
 
-                    <View>
-                        <Text style={styles.post_box}>
-                            {/*Contenu du post*/}
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                        </Text>
-                    </View>
 
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.container}
+                                      onPress={() => {
+                                          this.props.navigation.navigate('Details');
+                                      }}>
 
-                <TouchableOpacity style={styles.container}
-                                  onPress={() => {
-                                      this.props.navigation.navigate('Details');
-                                  }}>
+                        <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
+                            <Image
+                                // Avatar de l'utilisateur lié au post'
+                                source={require('../../assets/img/default.png')}
+                                style={{ width: 30, height: 30, padding: 5}}
+                            />
 
-                    <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
-                        <Image
-                            // Avatar de l'utilisateur lié au post'
-                            source={require('../../assets/img/default.png')}
-                            style={{ width: 30, height: 30, padding: 5}}
-                        />
+                            <Text style={{flex: 3, fontSize: 12, padding: 5}}>
+                                {/*Nom de l'utilisateur*/}
+                                Nom Prénom
+                            </Text>
+                        </TouchableOpacity>
 
-                        <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                            {/*Nom de l'utilisateur*/}
-                            Nom Prénom
-                        </Text>
+                        <View>
+                            <Text style={styles.post_box}>
+                                {/*Contenu du post*/}
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
+                            </Text>
+                        </View>
+
                     </TouchableOpacity>
 
-                    <View>
-                        <Text style={styles.post_box}>
-                            {/*Contenu du post*/}
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                        </Text>
-                    </View>
+                    <TouchableOpacity style={styles.container}
+                                      onPress={() => {
+                                          this.props.navigation.navigate('Details');
+                                      }}>
 
-                </TouchableOpacity>
+                        <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
+                            <Image
+                                // Avatar de l'utilisateur lié au post'
+                                source={require('../../assets/img/default.png')}
+                                style={{ width: 30, height: 30, padding: 5}}
+                            />
 
-                <TouchableOpacity style={styles.container}
-                                  onPress={() => {
-                                      this.props.navigation.navigate('Details');
-                                  }}>
+                            <Text style={{flex: 3, fontSize: 12, padding: 5}}>
+                                {/*Nom de l'utilisateur*/}
+                                Nom Prénom
+                            </Text>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
-                        <Image
-                            // Avatar de l'utilisateur lié au post'
-                            source={require('../../assets/img/default.png')}
-                            style={{ width: 30, height: 30, padding: 5}}
-                        />
+                        <View>
+                            <Text style={styles.post_box}>
+                                {/*Contenu du post*/}
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
+                            </Text>
+                        </View>
 
-                        <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                            {/*Nom de l'utilisateur*/}
-                            Nom Prénom
-                        </Text>
                     </TouchableOpacity>
 
-                    <View>
-                        <Text style={styles.post_box}>
-                            {/*Contenu du post*/}
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                        </Text>
-                    </View>
+                    <TouchableOpacity style={styles.container}
+                                      onPress={() => {
+                                          this.props.navigation.navigate('Details');
+                                      }}>
 
-                </TouchableOpacity>
+                        <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
+                            <Image
+                                // Avatar de l'utilisateur lié au post'
+                                source={require('../../assets/img/default.png')}
+                                style={{ width: 30, height: 30, padding: 5}}
+                            />
 
-                <TouchableOpacity style={styles.container}
-                                  onPress={() => {
-                                      this.props.navigation.navigate('Details');
-                                  }}>
+                            <Text style={{flex: 3, fontSize: 12, padding: 5}}>
+                                {/*Nom de l'utilisateur*/}
+                                Nom Prénom
+                            </Text>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
-                        <Image
-                            // Avatar de l'utilisateur lié au post'
-                            source={require('../../assets/img/default.png')}
-                            style={{ width: 30, height: 30, padding: 5}}
-                        />
+                        <View>
+                            <Text style={styles.post_box}>
+                                {/*Contenu du post*/}
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
+                            </Text>
+                        </View>
 
-                        <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                            {/*Nom de l'utilisateur*/}
-                            Nom Prénom
-                        </Text>
                     </TouchableOpacity>
 
-                    <View>
-                        <Text style={styles.post_box}>
-                            {/*Contenu du post*/}
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                        </Text>
-                    </View>
+                    <TouchableOpacity style={styles.container}
+                                      onPress={() => {
+                                          this.props.navigation.navigate('Details');
+                                      }}>
 
-                </TouchableOpacity>
+                        <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
+                            <Image
+                                // Avatar de l'utilisateur lié au post'
+                                source={require('../../assets/img/default.png')}
+                                style={{ width: 30, height: 30, padding: 5}}
+                            />
 
-                <TouchableOpacity style={styles.container}
-                                  onPress={() => {
-                                      this.props.navigation.navigate('Details');
-                                  }}>
+                            <Text style={{flex: 3, fontSize: 12, padding: 5}}>
+                                {/*Nom de l'utilisateur*/}
+                                Nom Prénom
+                            </Text>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
-                        <Image
-                            // Avatar de l'utilisateur lié au post'
-                            source={require('../../assets/img/default.png')}
-                            style={{ width: 30, height: 30, padding: 5}}
-                        />
+                        <View>
+                            <Text style={styles.post_box}>
+                                {/*Contenu du post*/}
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
+                            </Text>
+                        </View>
 
-                        <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                            {/*Nom de l'utilisateur*/}
-                            Nom Prénom
-                        </Text>
                     </TouchableOpacity>
 
-                    <View>
-                        <Text style={styles.post_box}>
-                            {/*Contenu du post*/}
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                        </Text>
-                    </View>
+                    <TouchableOpacity style={styles.container}
+                                      onPress={() => {
+                                          this.props.navigation.navigate('Details');
+                                      }}>
 
-                </TouchableOpacity>
+                        <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
+                            <Image
+                                // Avatar de l'utilisateur lié au post'
+                                source={require('../../assets/img/default.png')}
+                                style={{ width: 30, height: 30, padding: 5}}
+                            />
 
-                <TouchableOpacity style={styles.container}
-                                  onPress={() => {
-                                      this.props.navigation.navigate('Details');
-                                  }}>
+                            <Text style={{flex: 3, fontSize: 12, padding: 5}}>
+                                {/*Nom de l'utilisateur*/}
+                                Nom Prénom
+                            </Text>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={{flexDirection: 'row', padding: 5}}>
-                        <Image
-                            // Avatar de l'utilisateur lié au post'
-                            source={require('../../assets/img/default.png')}
-                            style={{ width: 30, height: 30, padding: 5}}
-                        />
+                        <View>
+                            <Text style={styles.post_box}>
+                                {/*Contenu du post*/}
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
+                            </Text>
+                        </View>
 
-                        <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                            {/*Nom de l'utilisateur*/}
-                            Nom Prénom
-                        </Text>
                     </TouchableOpacity>
 
-                    <View>
-                        <Text style={styles.post_box}>
-                            {/*Contenu du post*/}
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                        </Text>
-                    </View>
+                </ScrollView>
 
+                <TouchableOpacity
+                    style={styles.pencil}
+                    onPress={() => {
+                        this.props.navigation.navigate('Details');
+                    }}
+                >
+                    <Icon
+                        name={'edit'}
+                        size={50}
+                        color={'#fff'}
+                    />
                 </TouchableOpacity>
 
-            </ScrollView>
+            </View>
 
         );
     }
@@ -222,4 +241,12 @@ const styles = StyleSheet.create({
         textAlign: 'justify',
         margin: 10,
     },
+    pencil: {
+        position: 'absolute',
+        right: 10,
+        bottom: 10,
+        backgroundColor: 'rgba(108, 117, 125, 0.8)',
+        borderRadius: 100,
+        padding: 8,
+    }
 });
