@@ -4,6 +4,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import Header from "./src/components/header";
 import PostsList from "./src/components/PostsList";
 import DetailsPosts from "./src/components/DetailsPost";
+import Publish from "./src/components/Publish";
 
 
 
@@ -17,6 +18,7 @@ const NavParameters = createStackNavigator(
         Home: HomeScreen,
         Posts: PostsList,
         Details: DetailsPosts,
+        Publish: Publish,
     },
     {
         initialRouteName: 'Home',

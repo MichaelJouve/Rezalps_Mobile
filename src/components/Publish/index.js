@@ -1,8 +1,4 @@
-import {StackNavigator} from 'react-navigation';
-import publish from '/home/damien/sites/app_rezalps';
 import { Button } from 'react-native';
-import drawer from '/home/damien/sites/app_rezalps';
-import header from '/home/damien/sites/app_rezalps';
 import React from 'react';
 import {
     StyleSheet,
@@ -14,24 +10,12 @@ import {
 } from 'react-native';
 
 
-export default class Publish extends React.Component {
+export default class Index extends React.Component {
 
     render() {
 
         return (
             <View style={{flexDirection: 'column'}}>
-
-                <View style={{padding: 10, flexDirection: 'row', backgroundColor: '#444444'}} >
-                    <Image source={require('../../src/assets/img/rezalps_img.png')} style={{width: 150, height: 40}} />
-                    <Image source={require('../../src/assets/img/default.png')} style={{marginLeft:'40%', width: 40, height: 40}} />
-                    <Button
-                        style={{width: 50, height: 40, backgroundColor: '#007bff'}}
-                        logo={require('../../src/assets/img/burger_menu.png')}
-                        title="Menu"
-                        onPress={() => this.props.navigation('drawer')}
-                    />
-                </View>
-
                 <View style={styles.post}>
                     <View>
                         <TextInput
