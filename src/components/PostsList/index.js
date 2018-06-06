@@ -212,7 +212,7 @@ export default class PostsList extends Component {
                 <TouchableOpacity
                     style={styles.pencil}
                     onPress={() => {
-                        this.props.navigation.navigate('Details');
+                        this.props.navigation.navigate('Publish');
                     }}
                 >
                     <Icon
