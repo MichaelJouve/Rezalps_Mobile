@@ -7,7 +7,6 @@ import DetailsPosts from "./src/components/DetailsPost";
 import Publish from "./src/components/Publish";
 
 
-
 class AppNavigation extends React.Component {
     static navigationOptions = {
         title: 'Home',
