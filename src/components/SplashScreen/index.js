@@ -4,13 +4,13 @@
  * @flow
  */
 import React, { Component } from 'react';
+import styles from './style';
 import {
-    StyleSheet,
     Image,
     View,
 } from 'react-native';
 
-export default class Loader extends Component {
+export default class SplashScreen extends Component {
     render() {
         return (
             <View style={styles.loaderBG}>
@@ -19,15 +19,4 @@ export default class Loader extends Component {
         );
     }
 }
-const styles = StyleSheet.create({
-    loaderBG: {
-        flex: 1,
-        backgroundColor: '#444444',
-        alignItems: 'center',
-    },
-    logo: {
-        height: 80,
-        width: 240,
-        marginTop: '50%',
-    },
-});
+

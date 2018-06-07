@@ -5,7 +5,7 @@ import Header from "./src/components/header";
 import PostsList from "./src/components/PostsList";
 import DetailsPosts from "./src/components/DetailsPost";
 import Publish from "./src/components/Publish";
-import Loader from "./src/components/Loader";
+//import SplashScreen from "./src/components/SplashScreen";
 
 
 
@@ -20,10 +20,10 @@ const NavParameters = createStackNavigator(
         Posts: PostsList,
         Details: DetailsPosts,
         Publish: Publish,
-        Loader: Loader,
+        //SplashScreen: SplashScreen,
     },
     {
-        initialRouteName: 'Loader',
+        initialRouteName: 'Home',
         navigationOptions: {
             headerTitle: <Header/>,
             headerStyle: {
