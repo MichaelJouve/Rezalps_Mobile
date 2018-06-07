@@ -5,7 +5,7 @@ import Header from "./src/components/header";
 import PostsList from "./src/components/PostsList";
 import DetailsPosts from "./src/components/DetailsPost";
 import Publish from "./src/components/Publish";
-
+//import SplashScreen from "./src/components/SplashScreen";
 
 
 class AppNavigation extends React.Component {
@@ -19,6 +19,7 @@ const NavParameters = createStackNavigator(
         Posts: PostsList,
         Details: DetailsPosts,
         Publish: Publish,
+        //SplashScreen: SplashScreen,
     },
     {
         initialRouteName: 'Home',
