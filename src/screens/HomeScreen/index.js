@@ -1,9 +1,7 @@
 
 import React, { Component } from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import Test from "../../screens/Test";
 import {
-    Platform,
     StyleSheet,
     Text,
     Image,
@@ -17,9 +15,28 @@ import {
 import {InputLogin} from "../../components/Login";
 
 export default class HomeScreen extends Component {
+    constructor(props){
+        super(props);
+        this.state ={ isLoading: true, dataSource: null }
+    }
+    async componentDidMount() {
+        try {
+            let response = await fetch('https://rezalps.fr/api/posts');
+            this.setState({
+                isLoading: false,
+                dataSource: await response.json(),
+            });
+        }
+
+        catch (error){
+            console.error(error);
+        }
+
+    };
+
+
     render() {
         return (
-
             <View style={{flex:1}}>
 
                 <KeyboardAwareScrollView //To keep the input on top of the keyboard, not hidden.
@@ -65,16 +82,13 @@ export default class HomeScreen extends Component {
 
 
                                 <View>
-
-                                        {/*Contenu du post*/}
-                                        <View>
-                                            style={{fontSize: 15, textAlign: 'justify', margin: 10,}}
-
-
-                                             <Text >{this.props.dataSource.publication}, {this.props.dataSource.created_at}</Text>
-
-                                        </View>
-
+                                    <FlatList
+                                        data={this.state.dataSource}
+                                        renderItem={({item}) => <View style={{fontSize: 15, textAlign: 'justify', margin: 10,}}>
+                                            {item.publication}</View>}
+                                        keyExtractor={(item, index) => index}
+                                        {...this.props}
+                                    />
                                 </View>
 
 
