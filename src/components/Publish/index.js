@@ -1,7 +1,6 @@
-import { Button } from 'react-native';
 import React from 'react';
+import styles from './style';
 import {
-    StyleSheet,
     Image,
     Text,
     View,
@@ -19,9 +18,8 @@ export default class Index extends React.Component {
                 <View style={styles.post}>
                     <View>
                         <TextInput
-                            editable={true}
                             maxLength={250}
-                            multilible={true}
+                            multiligle={true}
                             numberOfLines={4}
                             underLineColorAndroid='transparent'
                             placeholder='Exprimez vous ici...'
@@ -33,32 +31,13 @@ export default class Index extends React.Component {
                             style={styles.touchable}
                             onPress={() => {}}
                         >
-                            <Text style={{textAlign: 'center', color: '#f6e8dd',}}> Valider </Text>
+                            <Text style={styles.valider}> Valider </Text>
                         </TouchableOpacity>
                     </View>
                 </View>
-
             </View>
-
         );
     }
 }
 
-const styles = StyleSheet.create({
-    post: {
-        borderWidth: 1,
-        margin: 5,
-        borderRadius: 5,
-        padding: 5,
-        height: '50%'
-    },
-    touchable: {
-        marginLeft: '80%',
-        width: 60,
-        height: 30,
-        borderWidth: 0.5,
-        borderRadius: 2,
-        backgroundColor: '#ea4c89',
-    },
 
-});
