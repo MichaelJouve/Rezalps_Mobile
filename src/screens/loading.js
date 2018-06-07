@@ -7,7 +7,7 @@ export default class Loading extends React.Component {
         super(props);
         this.state ={ isLoading: true}
     }
-
+setTimeout
     componentDidMount(){
         return fetch('https://rezalps.fr/api/posts')
             .then((response) => response.json())
@@ -32,6 +32,7 @@ export default class Loading extends React.Component {
             return(
                 <View style={{flex: 1, padding: 20}}>
                     <ActivityIndicator/>
+
                 </View>
             )
         }
@@ -40,6 +41,8 @@ export default class Loading extends React.Component {
             <View style={{flex: 1, paddingTop:20}}>
                 <FlatList
                     data={this.state.dataSource}
+                    {...this.state}
+                    {...this.props}
                     renderItem={({item}) => <Text>{item.publication}, {item.created_at}</Text>}
                     keyExtractor={(item, index) => index}
                 />

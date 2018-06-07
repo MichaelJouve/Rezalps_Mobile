@@ -10,6 +10,7 @@ import {
     ScrollView,
     View,
     Button,
+    FlatList
 
 } from 'react-native';
 
@@ -61,14 +62,24 @@ export default class HomeScreen extends Component {
                                     </Text>
                                 </View>
 
+
+
                                 <View>
-                                    <Text style={{fontSize: 15,
-                                        textAlign: 'justify',
-                                        margin: 10,}}>
+
                                         {/*Contenu du post*/}
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                                    </Text>
+                                        <View>
+                                            style={{fontSize: 15, textAlign: 'justify', margin: 10,}}
+
+
+                                             <Text >{this.props.dataSource.publication}, {this.props.dataSource.created_at}</Text>
+
+                                        </View>
+
                                 </View>
+
+
+
+
                             </View>
                             <View style={{flex: 1,
                                 flexDirection: 'column',
@@ -187,7 +198,6 @@ export default class HomeScreen extends Component {
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
                                     </Text>
                                 </View>
-
                             </View>
                         </ScrollView>
                     <View>
