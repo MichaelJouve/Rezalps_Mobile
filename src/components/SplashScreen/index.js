@@ -3,17 +3,18 @@
  * https://github.com/facebook/react-native
  * @flow
  */
+import React, { Component } from 'react';
+import styles from './style';
 
-import React from 'react';
+
 import {
-    StyleSheet,
     Image,
     View,
     ActivityIndicator,
 
 } from 'react-native';
 
-export default class Loader extends React.Component {
+export default class SplashScreen extends Component {
     constructor(props){
         super(props);
         this.state ={ isLoading: true, dataSource: null }
@@ -34,36 +35,10 @@ export default class Loader extends React.Component {
     };
 
     render() {
-        if (this.state.isLoading) {
-            return (
-                <View style={{flex: 1, padding: 20}}>
-                    <ActivityIndicator/>
-                </View>
-            )
-        }
-
-
         return (
-
             <View style={styles.loaderBG}>
                 <Image source={require('../../assets/img/logo-texte-cote-web.png')} style={styles.logo} />
             </View>
-
-
         );
     }
-
 }
-
-const styles = StyleSheet.create({
-    loaderBG: {
-        flex: 1,
-        backgroundColor: '#444444',
-        alignItems: 'center',
-    },
-    logo: {
-        height: 80,
-        width: 240,
-        marginTop: '50%',
-    },
-});
