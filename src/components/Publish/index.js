@@ -12,6 +12,38 @@ import {
 
 export default class Index extends React.Component {
 
+    constructor () {
+        super();
+        this.state={
+            post: '',
+        }
+    }
+
+    updateValue(text, field) {
+        if(field === 'post') {
+            this.setState({
+                post:text,
+            })
+        }
+    }
+
+    submit() {
+        let publish={}
+        publish.post=this.state.post;
+
+        var url = 'https://example.com/profile';
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(publish),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', response));
+    }
+
     render() {
 
         return (
@@ -25,13 +57,14 @@ export default class Index extends React.Component {
                             numberOfLines={4}
                             underLineColorAndroid='transparent'
                             placeholder='Exprimez vous ici...'
+                            onChangeText={(text)=>this.updateValue(text, 'post')}
                         />
                     </View>
 
                     <View >
                         <TouchableOpacity
                             style={styles.touchable}
-                            onPress={() => {}}
+                            onPress={() => this.submit()}
                         >
                             <Text style={{textAlign: 'center', color: '#f6e8dd',}}> Valider </Text>
                         </TouchableOpacity>
