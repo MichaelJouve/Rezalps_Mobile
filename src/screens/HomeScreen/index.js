@@ -74,76 +74,45 @@ export default class HomeScreen extends Component {
 
                         </View>
 
-                        <View style={{
-                            flex: 1,
-                            flexDirection: 'column',
-                            borderWidth: 1,
-                            borderRadius: 5,
-                            margin: 5,
-                        }}>
+                        <View>
+                            <FlatList
+                                data={this.state.dataSource}
+                                renderItem={({item}) =>
+                                    <View style={{
+                                        flex: 1,
+                                        flexDirection: 'column',
+                                        borderWidth: 1,
+                                        borderRadius: 5,
+                                        margin: 5,
+                                    }}>
 
-                            <View style={{flexDirection: 'row', padding: 5}}>
-                                <Image
-                                    // Avatar de l'utilisateur lié au post'
-                                    source={require('../../assets/img/default.png')}
-                                    style={{width: 30, height: 30, padding: 5}}
-                                />
-
-                                <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                                    {/*Nom de l'utilisateur*/}
-                                    Nom Prénom
-                                </Text>
-                            </View>
-
-
-
-                            <View>
-                                <FlatList
-                                    data={this.state.dataSource}
-                                    renderItem={({item}) => <Text style={{fontSize: 15, textAlign: 'justify', margin: 10,}}>
-                                        {item.publication}</Text>}
-                                    keyExtractor={(item, index) => index}
-                                    {...this.props}
-                                    {...this.state}
-                                />
-                            </View>
-                        </View>
-
-                        <View style={{
-                            flex: 1,
-                            flexDirection: 'column',
-                            borderWidth: 1,
-                            borderRadius: 5,
-                            margin: 5,
-                        }}>
-
-                            <View style={{flexDirection: 'row', padding: 5}}>
-                                <Image
+                                    <Text style={{flexDirection: 'row', padding: 5}}>
+                                    <Image
                                     // Avatar de l'utilisateur lié au post'
                                     source={require('../../assets/img/default.png')}
                                     style={{ width: 30, height: 30, padding: 5}}
-                                />
+                                    />
 
-                                <Text style={{flex: 3, fontSize: 12, padding: 5}}>
+                                    <Text style={{flex: 3, fontSize: 12, padding: 5}}>
                                     {/*Nom de l'utilisateur*/}
-                                    Nom Prénom
-                                </Text>
-                            </View>
+                                    {item.name}   /*name is on hidden in the APP so it's not comming in the app data... */
+                                    </Text>
+                                    </Text>
 
-                            <View>
-                                <Text style={{
-                                    fontSize: 15,
-                                    textAlign: 'justify',
-                                    margin: 10,
-                                }}>
+
+                                    <Text style={{
+                                        fontSize: 15,
+                                        textAlign: 'justify',
+                                        margin: 10,
+                                    }}>
                                     {/*Contenu du post*/}
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi
-                                    deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt
-                                    nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                                </Text>
-                            </View>
+                                    {item.publication}
+                                    </Text>
+                                    </View>
+                                }
+                                keyExtractor={(item, index) => index}
+                            />
                         </View>
-
 
                         <View>
                             <Text style={styles.hometitle}>Nous rejoindre</Text>
@@ -185,6 +154,7 @@ export default class HomeScreen extends Component {
                     </ScrollView>
                 </KeyboardAwareScrollView>
             </View>
+
 
         );
     }
