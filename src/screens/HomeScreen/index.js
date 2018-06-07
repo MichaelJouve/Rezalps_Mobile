@@ -2,13 +2,13 @@
 import React, { Component } from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import {
-    StyleSheet,
     Text,
     Image,
     ScrollView,
     View,
     Button,
-    FlatList
+    FlatList,
+    StyleSheet,
 
 } from 'react-native';
 
@@ -71,75 +71,6 @@ export default class HomeScreen extends Component {
                         </View>
                         <View>
                             <Text style={styles.hometitle}>Dernières publications</Text>
-                        </View>
-                        <View style={{
-                            flex: 1,
-                            flexDirection: 'column',
-                            borderWidth: 1,
-                            borderRadius: 5,
-                            margin: 5,
-                        }}>
-
-                            <View style={{flexDirection: 'row', padding: 5}}>
-                                <Image
-                                    // Avatar de l'utilisateur lié au post'
-                                    source={require('../../assets/img/default.png')}
-                                    style={{width: 30, height: 30, padding: 5}}
-                                />
-
-                                <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                                    {/*Nom de l'utilisateur*/}
-                                    Nom Prénom
-                                </Text>
-                            </View>
-
-
-
-                                <View>
-                                    <FlatList
-                                        data={this.state.dataSource}
-                                        renderItem={({item}) => <View style={{fontSize: 15, textAlign: 'justify', margin: 10,}}>
-                                            {item.publication}</View>}
-                                        keyExtractor={(item, index) => index}
-                                        {...this.props}
-                                    />
-                                </View>
-
-
-
-
-                            </View>
-                            <View style={{flex: 1,
-                                flexDirection: 'column',
-                                borderWidth: 1,
-                                borderRadius: 5,
-                                margin: 5,}}>
-
-                            <View style={{flexDirection: 'row', padding: 5}}>
-                                <Image
-                                    // Avatar de l'utilisateur lié au post'
-                                    source={require('../../assets/img/default.png')}
-                                    style={{width: 30, height: 30, padding: 5}}
-                                />
-
-                                <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                                    {/*Nom de l'utilisateur*/}
-                                    Nom Prénom
-                                </Text>
-                            </View>
-
-                            <View>
-                                <Text style={{
-                                    fontSize: 15,
-                                    textAlign: 'justify',
-                                    margin: 10,
-                                }}>
-                                    {/*Contenu du post*/}
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi
-                                    deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt
-                                    nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                                </Text>
-                            </View>
 
                         </View>
 
@@ -164,19 +95,18 @@ export default class HomeScreen extends Component {
                                 </Text>
                             </View>
 
-                            <View>
-                                <Text style={{
-                                    fontSize: 15,
-                                    textAlign: 'justify',
-                                    margin: 10,
-                                }}>
-                                    {/*Contenu du post*/}
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi
-                                    deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt
-                                    nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                                </Text>
-                            </View>
 
+
+                            <View>
+                                <FlatList
+                                    data={this.state.dataSource}
+                                    renderItem={({item}) => <Text style={{fontSize: 15, textAlign: 'justify', margin: 10,}}>
+                                        {item.publication}</Text>}
+                                    keyExtractor={(item, index) => index}
+                                    {...this.props}
+                                    {...this.state}
+                                />
+                            </View>
                         </View>
 
                         <View style={{
@@ -191,7 +121,7 @@ export default class HomeScreen extends Component {
                                 <Image
                                     // Avatar de l'utilisateur lié au post'
                                     source={require('../../assets/img/default.png')}
-                                    style={{width: 30, height: 30, padding: 5}}
+                                    style={{ width: 30, height: 30, padding: 5}}
                                 />
 
                                 <Text style={{flex: 3, fontSize: 12, padding: 5}}>
@@ -212,43 +142,9 @@ export default class HomeScreen extends Component {
                                     nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
                                 </Text>
                             </View>
-
-                            </View>
-
-                        <View style={{
-                            flex: 1,
-                            flexDirection: 'column',
-                            borderWidth: 1,
-                            borderRadius: 5,
-                            margin: 5,
-                        }}>
-
-                                <View style={{flexDirection: 'row', padding: 5}}>
-                                    <Image
-                                        // Avatar de l'utilisateur lié au post'
-                                        source={require('../../assets/img/default.png')}
-                                        style={{ width: 30, height: 30, padding: 5}}
-                                    />
-
-                                <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                                    {/*Nom de l'utilisateur*/}
-                                    Nom Prénom
-                                </Text>
-                            </View>
-
-                            <View>
-                                <Text style={{
-                                    fontSize: 15,
-                                    textAlign: 'justify',
-                                    margin: 10,
-                                }}>
-                                    {/*Contenu du post*/}
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi
-                                    deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt
-                                    nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                                </Text>
-                            </View>
                         </View>
+
+
                         <View>
                             <Text style={styles.hometitle}>Nous rejoindre</Text>
                         </View>
@@ -266,7 +162,6 @@ export default class HomeScreen extends Component {
 
                             <View style={{marginBottom: 10}}>
                                 <Button
-                                    style={{}}
                                     onPress={() => {
                                         this.props.navigation.navigate('Posts');
                                     }}
@@ -290,9 +185,11 @@ export default class HomeScreen extends Component {
                     </ScrollView>
                 </KeyboardAwareScrollView>
             </View>
+
         );
     }
 }
+
 
 
 const styles = StyleSheet.create({

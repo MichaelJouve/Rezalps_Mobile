@@ -5,7 +5,8 @@ import Header from "./src/components/header";
 import PostsList from "./src/components/PostsList";
 import DetailsPosts from "./src/components/DetailsPost";
 import Publish from "./src/components/Publish";
-//import SplashScreen from "./src/components/SplashScreen";
+import SplashScreen from "./src/screens/SplashScreen";
+
 
 
 
@@ -16,14 +17,14 @@ class AppNavigation extends React.Component {
 }
 const NavParameters = createStackNavigator(
     {
-        Home: HomeScreen,
+        Login: HomeScreen,
         Posts: PostsList,
         Details: DetailsPosts,
         Publish: Publish,
-        //SplashScreen: SplashScreen,
+        Splash: SplashScreen,
     },
     {
-        initialRouteName: 'SplashScreen',
+        initialRouteName: 'Splash',
         navigationOptions: {
             headerTitle: <Header/>,
             headerStyle: {
