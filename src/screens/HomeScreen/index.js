@@ -1,24 +1,43 @@
-import React, {Component} from 'react';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import Test from "../../screens/Test";
+
+import React, { Component } from 'react';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import {
-    Platform,
-    StyleSheet,
     Text,
     Image,
     ScrollView,
     View,
     Button,
+    FlatList,
+    StyleSheet,
 
 } from 'react-native';
 
 import {InputLogin} from "../../components/Login";
 
 export default class HomeScreen extends Component {
+    constructor(props){
+        super(props);
+        this.state ={ isLoading: true, dataSource: null }
+    }
+    async componentDidMount() {
+        try {
+            let response = await fetch('https://rezalps.fr/api/posts');
+            this.setState({
+                isLoading: false,
+                dataSource: await response.json(),
+            });
+        }
+
+        catch (error){
+            console.error(error);
+        }
+
+    };
+
+
     render() {
         return (
-
-            <View style={{flex: 1}}>
+            <View style={{flex:1}}>
 
                 <KeyboardAwareScrollView //To keep the input on top of the keyboard, not hidden.
                     resetScrollToCoords={{x: 0, y: 0}}
@@ -52,183 +71,49 @@ export default class HomeScreen extends Component {
                         </View>
                         <View>
                             <Text style={styles.hometitle}>Dernières publications</Text>
-                        </View>
-                        <View style={{
-                            flex: 1,
-                            flexDirection: 'column',
-                            borderWidth: 1,
-                            borderRadius: 5,
-                            margin: 5,
-                        }}>
 
-                            <View style={{flexDirection: 'row', padding: 5}}>
-                                <Image
+                        </View>
+
+                        <View>
+                            <FlatList
+                                data={this.state.dataSource}
+                                renderItem={({item}) =>
+                                    <View style={{
+                                        flex: 1,
+                                        flexDirection: 'column',
+                                        borderWidth: 1,
+                                        borderRadius: 5,
+                                        margin: 5,
+                                    }}>
+
+                                    <Text style={{flexDirection: 'row', padding: 5}}>
+                                    <Image
                                     // Avatar de l'utilisateur lié au post'
                                     source={require('../../assets/img/default.png')}
-                                    style={{width: 30, height: 30, padding: 5}}
-                                />
+                                    style={{ width: 30, height: 30, padding: 5}}
+                                    />
 
-                                <Text style={{flex: 3, fontSize: 12, padding: 5}}>
+                                    <Text style={{flex: 3, fontSize: 12, padding: 5}}>
                                     {/*Nom de l'utilisateur*/}
-                                    Nom Prénom
-                                </Text>
-                            </View>
+                                    {item.name}   /*name is on hidden in the APP so it's not comming in the app data... */
+                                    </Text>
+                                    </Text>
 
-                            <View>
-                                <Text style={{
-                                    fontSize: 15,
-                                    textAlign: 'justify',
-                                    margin: 10,
-                                }}>
+
+                                    <Text style={{
+                                        fontSize: 15,
+                                        textAlign: 'justify',
+                                        margin: 10,
+                                    }}>
                                     {/*Contenu du post*/}
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi
-                                    deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt
-                                    nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                                </Text>
-                            </View>
-                        </View>
-                        <View style={{
-                            flex: 1,
-                            flexDirection: 'column',
-                            borderWidth: 1,
-                            borderRadius: 5,
-                            margin: 5,
-                        }}>
-
-                            <View style={{flexDirection: 'row', padding: 5}}>
-                                <Image
-                                    // Avatar de l'utilisateur lié au post'
-                                    source={require('../../assets/img/default.png')}
-                                    style={{width: 30, height: 30, padding: 5}}
-                                />
-
-                                <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                                    {/*Nom de l'utilisateur*/}
-                                    Nom Prénom
-                                </Text>
-                            </View>
-
-                            <View>
-                                <Text style={{
-                                    fontSize: 15,
-                                    textAlign: 'justify',
-                                    margin: 10,
-                                }}>
-                                    {/*Contenu du post*/}
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi
-                                    deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt
-                                    nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                                </Text>
-                            </View>
-
+                                    {item.publication}
+                                    </Text>
+                                    </View>
+                                }
+                                keyExtractor={(item, index) => index}
+                            />
                         </View>
 
-                        <View style={{
-                            flex: 1,
-                            flexDirection: 'column',
-                            borderWidth: 1,
-                            borderRadius: 5,
-                            margin: 5,
-                        }}>
-
-                            <View style={{flexDirection: 'row', padding: 5}}>
-                                <Image
-                                    // Avatar de l'utilisateur lié au post'
-                                    source={require('../../assets/img/default.png')}
-                                    style={{width: 30, height: 30, padding: 5}}
-                                />
-
-                                <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                                    {/*Nom de l'utilisateur*/}
-                                    Nom Prénom
-                                </Text>
-                            </View>
-
-                            <View>
-                                <Text style={{
-                                    fontSize: 15,
-                                    textAlign: 'justify',
-                                    margin: 10,
-                                }}>
-                                    {/*Contenu du post*/}
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi
-                                    deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt
-                                    nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                                </Text>
-                            </View>
-
-                        </View>
-
-                        <View style={{
-                            flex: 1,
-                            flexDirection: 'column',
-                            borderWidth: 1,
-                            borderRadius: 5,
-                            margin: 5,
-                        }}>
-
-                            <View style={{flexDirection: 'row', padding: 5}}>
-                                <Image
-                                    // Avatar de l'utilisateur lié au post'
-                                    source={require('../../assets/img/default.png')}
-                                    style={{width: 30, height: 30, padding: 5}}
-                                />
-
-                                <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                                    {/*Nom de l'utilisateur*/}
-                                    Nom Prénom
-                                </Text>
-                            </View>
-
-                            <View>
-                                <Text style={{
-                                    fontSize: 15,
-                                    textAlign: 'justify',
-                                    margin: 10,
-                                }}>
-                                    {/*Contenu du post*/}
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi
-                                    deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt
-                                    nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                                </Text>
-                            </View>
-
-                        </View>
-
-                        <View style={{
-                            flex: 1,
-                            flexDirection: 'column',
-                            borderWidth: 1,
-                            borderRadius: 5,
-                            margin: 5,
-                        }}>
-
-                            <View style={{flexDirection: 'row', padding: 5}}>
-                                <Image
-                                    // Avatar de l'utilisateur lié au post'
-                                    source={require('../../assets/img/default.png')}
-                                    style={{width: 30, height: 30, padding: 5}}
-                                />
-
-                                <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                                    {/*Nom de l'utilisateur*/}
-                                    Nom Prénom
-                                </Text>
-                            </View>
-
-                            <View>
-                                <Text style={{
-                                    fontSize: 15,
-                                    textAlign: 'justify',
-                                    margin: 10,
-                                }}>
-                                    {/*Contenu du post*/}
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae commodi
-                                    deleniti dolores doloribus, earum excepturi fugiat iure libero molestiae nesciunt
-                                    nihil nisi nobis, pariatur quam saepe voluptatem! Accusantium, itaque.
-                                </Text>
-                            </View>
-                        </View>
                         <View>
                             <Text style={styles.hometitle}>Nous rejoindre</Text>
                         </View>
@@ -246,7 +131,6 @@ export default class HomeScreen extends Component {
 
                             <View style={{marginBottom: 10}}>
                                 <Button
-                                    style={{}}
                                     onPress={() => {
                                         this.props.navigation.navigate('Posts');
                                     }}
@@ -270,9 +154,12 @@ export default class HomeScreen extends Component {
                     </ScrollView>
                 </KeyboardAwareScrollView>
             </View>
+
+
         );
     }
 }
+
 
 
 const styles = StyleSheet.create({
