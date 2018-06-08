@@ -29,4 +29,4 @@ export default class drawer extends Component {
     }
 }
 
-AppRegistry.registerComponent('app_rezalps', () => drawer);
+AppRegistry.registerComponent('Rezalps_Mobile', () => drawer);
