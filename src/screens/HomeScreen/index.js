@@ -1,6 +1,5 @@
-
-import React, { Component } from 'react';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import React, {Component} from 'react';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {
     Text,
     Image,
@@ -15,10 +14,11 @@ import {
 import {InputLogin} from "../../components/Login";
 
 export default class HomeScreen extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state ={ isLoading: true, dataSource: null }
+        this.state = {isLoading: true, dataSource: null}
     }
+
     async componentDidMount() {
         try {
             let response = await fetch('https://rezalps.fr/api/posts');
@@ -28,7 +28,7 @@ export default class HomeScreen extends Component {
             });
         }
 
-        catch (error){
+        catch (error) {
             console.error(error);
         }
 
@@ -37,7 +37,7 @@ export default class HomeScreen extends Component {
 
     render() {
         return (
-            <View style={{flex:1}}>
+            <View style={{flex: 1}}>
 
                 <KeyboardAwareScrollView //To keep the input on top of the keyboard, not hidden.
                     resetScrollToCoords={{x: 0, y: 0}}
@@ -86,28 +86,28 @@ export default class HomeScreen extends Component {
                                         margin: 5,
                                     }}>
 
-                                    <Text style={{flexDirection: 'row', padding: 5}}>
-                                    <Image
-                                    // Avatar de l'utilisateur lié au post'
-                                    source={require('../../assets/img/default.png')}
-                                    style={{ width: 30, height: 30, padding: 5}}
-                                    />
+                                        <Text style={{flexDirection: 'row', padding: 5}}>
+                                            <Image
+                                                // Avatar de l'utilisateur lié au post'
+                                                source={require('../../assets/img/default.png')}
+                                                style={{width: 30, height: 30, padding: 5}}
+                                            />
 
-                                    <Text style={{flex: 3, fontSize: 12, padding: 5}}>
-                                    {/*Nom de l'utilisateur*/}
-                                    {item.name}   /*name is on hidden in the APP so it's not comming in the app data... */
-                                    </Text>
-                                    </Text>
+                                            <Text style={{flex: 3, fontSize: 12, padding: 5}}>
+                                                {/*Nom de l'utilisateur*/}
+                                                {item.name} /*name is on hidden in the APP so it's not comming in the app data... */
+                                            </Text>
+                                        </Text>
 
 
-                                    <Text style={{
-                                        fontSize: 15,
-                                        textAlign: 'justify',
-                                        margin: 10,
-                                    }}>
-                                    {/*Contenu du post*/}
-                                    {item.publication}
-                                    </Text>
+                                        <Text style={{
+                                            fontSize: 15,
+                                            textAlign: 'justify',
+                                            margin: 10,
+                                        }}>
+                                            {/*Contenu du post*/}
+                                            {item.publication}
+                                        </Text>
                                     </View>
                                 }
                                 keyExtractor={(item, index) => index}
@@ -141,24 +141,28 @@ export default class HomeScreen extends Component {
                                     // accessibilityLabel="Learn more about this purple button"
                                 />
                             </View>
-                            <Button
-                                style={styles.button}
-                                onPress={() => {
-                                    this.props.navigation.navigate('Posts');
-                                }}
-                                title="Login"
-                                color="#ea4c89"
-                                // accessibilityLabel="Learn more about this purple button"
-                            />
-                            <Button
-                                style={styles.button}
-                                onPress={() => {
-                                    this.props.navigation.navigate('Geoloc');
-                                }}
-                                title="Geolocation"
-                                color="#ea4c89"
-                                // accessibilityLabel="Learn more about this purple button"
-                            />
+                            <View style={{marginBottom: 10}}>
+                                <Button
+                                    style={styles.button}
+                                    onPress={() => {
+                                        this.props.navigation.navigate('Posts');
+                                    }}
+                                    title="Login"
+                                    color="#ea4c89"
+                                    // accessibilityLabel="Learn more about this purple button"
+                                />
+                            </View>
+                            <View>
+                                <Button
+                                    style={styles.button}
+                                    onPress={() => {
+                                        this.props.navigation.navigate('Geoloc');
+                                    }}
+                                    title="Geolocation"
+                                    color="#ea4c89"
+                                    // accessibilityLabel="Learn more about this purple button"
+                                />
+                            </View>
                         </View>
                     </ScrollView>
                 </KeyboardAwareScrollView>
@@ -168,7 +172,6 @@ export default class HomeScreen extends Component {
         );
     }
 }
-
 
 
 const styles = StyleSheet.create({
