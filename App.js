@@ -22,7 +22,7 @@ const NavParameters = createStackNavigator(
         Details: DetailsPosts,
         Publish: Publish,
         Splash: SplashScreen,
-        Geoloc: Geolocation,
+        geoloc: Geolocation,
     },
     {
         initialRouteName: 'Splash',

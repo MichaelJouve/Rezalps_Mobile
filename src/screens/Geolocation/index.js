@@ -22,12 +22,8 @@ class Geolocation extends Component {
                 });
             },
             (error) => this.setState({ error: error.message }),
-            { enableHighAccuracy: true, timeout: 200000, maximumAge: 1000 },
+            { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
         );
-    }
-
-    componentWillUnmount() {
-        navigator.geolocation.clearWatch(this.watchId);
     }
 
     render() {
