@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 
 import TokenStorage from "../../components/SaveToken";
-debugger;
+
 export default class HomeScreen extends Component {
     constructor(props){
         super(props);
@@ -63,7 +63,6 @@ export default class HomeScreen extends Component {
             }
             else {
                 token = await response.json();
-                console.log(token);
                 access = await token.access_token;
                 TokenStorage.token = access;
                 this.props.navigation.navigate('Posts');
