@@ -150,6 +150,15 @@ export default class HomeScreen extends Component {
                                 color="#ea4c89"
                                 // accessibilityLabel="Learn more about this purple button"
                             />
+                            <Button
+                                style={styles.button}
+                                onPress={() => {
+                                    this.props.navigation.navigate('Geoloc');
+                                }}
+                                title="Geolocation"
+                                color="#ea4c89"
+                                // accessibilityLabel="Learn more about this purple button"
+                            />
                         </View>
                     </ScrollView>
                 </KeyboardAwareScrollView>
