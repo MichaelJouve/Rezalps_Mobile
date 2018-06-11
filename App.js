@@ -6,6 +6,7 @@ import PostsList from "./src/components/PostsList";
 import DetailsPosts from "./src/components/DetailsPost";
 import Publish from "./src/components/Publish";
 import SplashScreen from "./src/screens/SplashScreen";
+import Geolocation from "./src/screens/Geolocation";
 
 
 
@@ -21,6 +22,7 @@ const NavParameters = createStackNavigator(
         Details: DetailsPosts,
         Publish: Publish,
         Splash: SplashScreen,
+        geoloc: Geolocation,
     },
     {
         initialRouteName: 'Splash',
