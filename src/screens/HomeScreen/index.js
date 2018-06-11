@@ -34,7 +34,6 @@ export default class HomeScreen extends Component {
 
     };
 
-
     render() {
         return (
             <View style={{flex:1}}>
