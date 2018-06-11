@@ -9,6 +9,7 @@ import {
     Button,
     FlatList,
     StyleSheet,
+    ActivityIndicator,
 
 } from 'react-native';
 
@@ -36,6 +37,15 @@ export default class HomeScreen extends Component {
 
 
     render() {
+        if(this.state.isLoading){
+            return (
+                <View style={{flex:1}}>
+                    <ActivityIndicator size="large" color="#0000ff" />
+                </View>
+            )
+        }else{
+
+
         return (
             <View style={{flex:1}}>
 
@@ -158,7 +168,7 @@ export default class HomeScreen extends Component {
 
         );
     }
-}
+}}
 
 
 
